@@ -1,0 +1,131 @@
+<!-- <app-navbar #one></app-navbar>
+<div class="col-sm-12">
+
+  {{form.message}}
+
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text"><i class="fa fa-key grey-text "></i> </div>
+    </div>
+    <input type="text" name="otp" [(ngModel)]="form.otp" class="form-control"
+      placeholder="{{'Enter Otp' | translate}}">
+  </div>
+</div>
+<div class="pt-2">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button (click)="submit()" class="btn btn-md btn-success">
+    {{'Submit' | translate}}</button>
+</div>
+<app-footer></app-footer> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification</title>
+  <!-- Include Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .container {
+      margin-top: 100px;
+    }
+
+    .card {
+      border-radius: 15px;
+    }
+
+    .card-header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .card-header h3 {
+      margin: 0;
+      color: #007bff;
+    }
+
+    .input-group-text {
+      background-color: #e9ecef;
+      border: none;
+      border-radius: 15px 0 0 15px;
+    }
+
+    .btn-success {
+      width: 100%;
+      border-radius: 0 0 15px 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar placeholder -->
+  <app-navbar #one></app-navbar>
+
+  <!-- OTP Verification Box -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <div class="card shadow">
+          <div class="card-header text-center">
+            <h3>OTP Verification</h3>
+          </div>
+          <div class="card-body">
+            <div *ngIf=" form.message "
+            class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{'Invalid OTP' | translate}}
+          </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fa fa-key grey-text"></i></div>
+              </div>
+              <input type="text" name="otp" [(ngModel)]="form.otp" class="form-control" placeholder="{{ 'Enter OTP' | translate }}">
+            </div>
+            <div class="text-center">
+              <button (click)="submit()" [disabled]="!validate()" class="btn btn-md btn-success">{{ 'Submit' | translate }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer placeholder -->
+  <app-footer></app-footer>
+
+  <!-- Include Bootstrap and FontAwesome JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
